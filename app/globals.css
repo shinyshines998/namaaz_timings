@@ -1,26 +1,72 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --gold: #d4b052;
+  --teal: #0a4f4f;
+  --amber: #ffd700;
+  --cream: #fff8dc;
+  --dark-overlay: rgba(10, 79, 79, 0.75);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cormorant);
+  min-height: 100vh;
 }
+
+.islamic-bg {
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/generate%20a%20very%20artistic%20and%20visually%20appealing%20islamic%20image%20that%20I%20can%20use%20as%20a%20background%20for%20my%20website.%20It%20should%20not%20have%20any%20text.%20(1).jpg-65cUhgQe9xuC8tlyGcpo786ThFHLOx.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.prayer-container {
+  background: var(--dark-overlay);
+  border: 1px solid rgba(212, 176, 82, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+
+.prayer-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.prayer-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.prayer-container::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  border-radius: 3px;
+}
+
+.golden-text {
+  color: var(--gold);
+  text-shadow: 0 2px 12px rgba(212, 176, 82, 0.3);
+}
+
+.prayer-time {
+  font-family: var(--font-amiri);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-amiri);
+}
+
+td,
+th {
+  white-space: nowrap;
+}
+
