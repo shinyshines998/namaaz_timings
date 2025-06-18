@@ -1,3 +1,4 @@
+import { getFormattedIslamicDate } from "../utils/islamicDateUtils"
 interface PrayerTime {
   name: string
   time: string
@@ -15,7 +16,8 @@ const PrayerCard = ({ today, times }: PrayerCardProps) => {
         <h1 className="text-4xl md:text-5xl font-cormorant font-semibold text-center golden-text mb-4">
           Islamic Prayer Timings
         </h1>
-        <p className="text-xl font-cormorant font-semibold text-center golden-text mb-4">Today's Date -- {today.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</p>
+        <p className="text-xl font-cormorant font-semibold text-center golden-text mb-4">Today&apos;s Date: {today.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</p>
+        <p className="text-xl font-cormorant font-semibold text-center golden-text mb-4">Islamic Date: {getFormattedIslamicDate(today)}</p>
         <div className="space-y-4 mb-0">
           {times.map((prayer) => (
             <div key={prayer.name} className="flex justify-between items-center">

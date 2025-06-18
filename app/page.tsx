@@ -18,7 +18,7 @@ export default function Home() {
             MEERUT, UTTAR PRADESH, INDIA
           </p>
           <p className="text-lg text-cream/80 tracking-wider mb-0 font-cormorant">
-            Today's Date is {today.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}
+            Today&apos;s Date is {today.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}
           </p>
           <p className="text-sm mb-0 text-cream/70 font-cormorant">
             Method: Islamic Society of India
