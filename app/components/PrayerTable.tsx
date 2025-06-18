@@ -1,3 +1,5 @@
+"use client"
+
 import { format } from "date-fns"
 import type { DailyPrayerTimes } from "../utils/timeUtils"
 
@@ -11,15 +13,15 @@ const PrayerTable = ({ prayerTimes, title, showMonthHeaders = false }: PrayerTab
   let currentMonth = -1
 
   const TableHeader = () => (
-    <tr className="text-white/90 border-b border-white/10">
-      <th className="py-3 text-left font-normal">Date</th>
-      <th className="py-3 text-center font-normal">Fajr</th>
-      <th className="py-3 text-center font-normal">Sunrise</th>
-      <th className="py-3 text-center font-normal">Zawal</th>
-      <th className="py-3 text-center font-normal">Dhuhr</th>
-      <th className="py-3 text-center font-normal">Asr</th>
-      <th className="py-3 text-center font-normal">Maghrib</th>
-      <th className="py-3 text-center font-normal">Isha</th>
+    <tr className="bg-gold/20 backdrop-blur-sm border-y border-gold/30">
+      <th className="py-4 px-4 text-left font-semibold text-gold uppercase text-sm tracking-wider">Date</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Fajr</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Sunrise</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Zawal</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Dhuhr</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Asr</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Maghrib</th>
+      <th className="py-4 text-center font-semibold text-gold uppercase text-sm tracking-wider">Isha</th>
     </tr>
   )
 
@@ -56,7 +58,7 @@ const PrayerTable = ({ prayerTimes, title, showMonthHeaders = false }: PrayerTab
                 <tr
                   key={day.date.toISOString()}
                   className={`
-                    ${isToday ? "text-gold" : "text-white/90"} 
+                    ${isToday ? "text-gold font-medium" : "text-white/90"} 
                     ${index % 2 === 0 ? "bg-black/20" : "bg-transparent"}
                     hover:bg-white/5 transition-colors
                   `}
@@ -81,4 +83,3 @@ const PrayerTable = ({ prayerTimes, title, showMonthHeaders = false }: PrayerTab
 }
 
 export default PrayerTable
-
