@@ -32,12 +32,10 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${amiri.variable}`}>
       <body>
         <Suspense fallback={null}>
-          <div className="min-h-screen islamic-bg">
-            <div className="min-h-screen bg-teal/50 flex flex-col">
-              <Header />
-              {children}
-              <Footer />
-            </div>
+          <div className="min-h-screen islamic-bg flex flex-col">
+            <Header />
+            {children}
+            <Footer />
           </div>
         </Suspense>
         <Analytics />
