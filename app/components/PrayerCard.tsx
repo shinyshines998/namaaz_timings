@@ -27,7 +27,7 @@ const PrayerCard = () => {
     };
 
     fetchPrayerTimes();
-  }, [today]);
+  }, []);
 
   if (loading) {
     return (
