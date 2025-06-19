@@ -3,6 +3,8 @@ import "./globals.css"
 import { Cormorant, Amiri } from "next/font/google"
 import type React from "react"
 import { Analytics } from "@vercel/analytics/react"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -30,7 +32,13 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${amiri.variable}`}>
       <body>
         <Suspense fallback={null}>
-          {children}
+          <div className="min-h-screen islamic-bg">
+            <div className="min-h-screen bg-teal/50 flex flex-col">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </div>
         </Suspense>
         <Analytics />
       </body>

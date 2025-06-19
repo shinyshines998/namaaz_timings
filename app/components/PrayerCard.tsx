@@ -1,15 +1,54 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { getFormattedIslamicDate } from "../utils/islamicDateUtils"
-interface PrayerTime {
-  name: string
-  time: string
-}
+import { PrayerTime } from "../utils/timeUtils"
 
-interface PrayerCardProps {
-  today: Date
-  times: PrayerTime[]
-}
+const PrayerCard = () => {
+  const [times, setTimes] = useState<PrayerTime[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const today = new Date();
 
-const PrayerCard = ({ today, times }: PrayerCardProps) => {
+  useEffect(() => {
+    const fetchPrayerTimes = async () => {
+      try {
+        const response = await fetch(`/api/prayer-times?month=${today.getMonth() + 1}&day=${today.getDate()}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch prayer times');
+        }
+        const data = await response.json();
+        setTimes(data.times);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPrayerTimes();
+  }, [today]);
+
+  if (loading) {
+    return (
+      <div className="max-w-md mx-auto w-full">
+        <div className="prayer-container rounded-2xl p-8 md:p-12 text-center">
+          <p className="text-xl golden-text">Loading prayer times...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="max-w-md mx-auto w-full">
+        <div className="prayer-container rounded-2xl p-8 md:p-12 text-center">
+          <p className="text-xl golden-text">Error: {error}</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-md mx-auto w-full">
       <div className="prayer-container rounded-2xl p-8 md:p-12">

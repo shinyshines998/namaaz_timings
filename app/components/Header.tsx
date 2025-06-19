@@ -14,8 +14,8 @@ const Header = () => {
             <Link
               href="/"
               className={`text-sm uppercase tracking-widest font-cormorant transition-colors ${pathname === "/"
-                  ? "text-gold font-bold"
-                  : "text-cream/90 hover:text-gold"
+                ? "text-gold font-bold"
+                : "text-cream/90 hover:text-gold"
                 }`}
             >
               Day
@@ -23,21 +23,10 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/month"
-              className={`text-sm uppercase tracking-widest font-cormorant transition-colors ${pathname === "/month"
-                  ? "text-gold font-bold"
-                  : "text-cream/90 hover:text-gold"
-                }`}
-            >
-              Month
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/year"
               className={`text-sm uppercase tracking-widest font-cormorant transition-colors ${pathname === "/year"
-                  ? "text-gold font-bold"
-                  : "text-cream/90 hover:text-gold"
+                ? "text-gold font-bold"
+                : "text-cream/90 hover:text-gold"
                 }`}
             >
               Year
