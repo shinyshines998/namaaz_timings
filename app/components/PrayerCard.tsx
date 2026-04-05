@@ -53,9 +53,9 @@ const PrayerCard = () => {
     <div className="max-w-md mx-auto w-full">
       <div className="prayer-container rounded-2xl p-8 md:p-12">
         <h1 className="text-4xl md:text-5xl font-cormorant font-semibold text-center golden-text mb-4">
-          Islamic Prayer Timings
+          Islamic Prayer Timings Meerut
         </h1>
-        <p className="text-xl font-cormorant font-semibold text-center golden-text mb-4">Today&apos;s Date: {today.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</p>
+        <p className="text-2xl font-cormorant font-semibold text-center golden-text mb-4">{today.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</p>
         <p className="text-xl font-cormorant font-semibold text-center golden-text mb-4">Islamic Date: {getFormattedIslamicDate(today)}</p>
         <div className="space-y-4 mb-0">
           {times.map((prayer) => (
